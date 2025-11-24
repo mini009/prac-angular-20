@@ -1,0 +1,60 @@
+/* :root{
+    --gap-size: 20px;
+}
+.investment-container{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.investment-card{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width:200px;
+    box-sizing: border-box;
+    gap:20px;
+    padding: 20px;
+    width: calc(25% - 20px); 
+} */
+
+.investment-container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap:20px 20px;
+    margin:20px;
+}
+.investment-card{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width:200px;
+    box-sizing: border-box;
+    padding: 20px;
+  
+} 
+/* for tablets */
+@media screen and (min-width: 600px) {
+    .investment-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+/* for desktops */
+@media screen and (min-width: 1024px) {
+    .investment-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+/* for large desktops */
+/* @media screen and (min-width: 1440px) {
+    .investment-container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+} */

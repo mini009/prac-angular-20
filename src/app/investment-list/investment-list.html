@@ -1,0 +1,19 @@
+<p>investment-list works!</p>
+
+<button (click)="displayInvestments()">show investmenst</button>
+
+<!-- {{ allInvestementsList()  | json }} -->
+
+<div class="investment-container">
+  @for(investment of allInvestementsList(); track investment.id){
+  <div class="investment-card">
+ 
+      <h3 class="bank-name">{{ investment?.name }}</h3>
+      <p>Amount: {{ investment?.amount }}</p>
+      <p>Type: {{ investment.type}}</p>
+      <p>Purchase date:{{investment.purchaseDate | date}}</p>
+      <p>Amount:{{ investment.amount | currency: 'INR' }}</p>
+    <p>Current Value:{{investment.currentValue  | currency: 'INR' }}</p>
+  </div>
+  }
+</div>
