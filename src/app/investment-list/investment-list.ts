@@ -16,7 +16,7 @@ export class InvestmentList {
   }
 
   ngOnInit(){
-    this.investmentService.loadInvestments();
+     this.investmentService.loadInvestments();
    
   }
 

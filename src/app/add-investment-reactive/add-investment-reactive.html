@@ -1,0 +1,108 @@
+<form [formGroup]="form"  (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input 
+        type="text" 
+        id="id" 
+        name="id" 
+       
+        class="form-control" 
+        
+      formControlName="id"/>
+      @if (f.id.touched && f.id.hasError('required')){
+            <small class="text-danger">ID is required.</small>
+      }
+   @if (f.id.touched && f.id.hasError('min')){
+            <small class="text-danger">ID must be at greater than zero.</small>
+      }
+    </div>
+  
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        formControlName="name"
+        class="form-control" 
+        
+      >
+      @if (f.name.touched && f.name.hasError('required')){
+        <small class="text-danger">Name is required.</small>
+  }
+@if (f.name.touched && f.name.hasError('minLength')){
+        <small class="text-danger">Name length must be greater than 2</small>
+  }
+    </div>
+  
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select 
+        id="type" 
+        name="type" 
+        formControlName="type"
+        class="form-control" 
+        
+        >
+        <option value="Mutual Fund">Mutual Fund</option>
+        <option value="Stocks">Stocks</option>
+        <option value="Bonds">Bonds</option>
+      </select>
+      @if (f.type.touched && f.type.hasError('required')){
+        <small class="text-danger">Type is required</small>
+  }
+    </div>
+  
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input 
+        type="number" 
+        id="amount" 
+        name="amount" 
+        formControlName="amount"
+        class="form-control" 
+    
+       >
+       @if (f.amount.touched && f.amount.hasError('required')){
+        <small class="text-danger">Amount is reuired </small>
+       }
+    </div>
+  
+    <div class="form-group">
+      <label for="purchaseDate">Purchase Date</label>
+      <input 
+        type="date" 
+        id="purchaseDate" 
+        name="purchaseDate" 
+        formControlName="purchaseDate"
+        class="form-control" 
+    
+>
+
+@if (f.purchaseDate.touched && f.purchaseDate.hasError('required')){
+    <small class="text-danger">purchase date is reuired </small>
+   }
+ 
+    </div>
+  
+    <div class="form-group">
+      <label for="currentValue">Current Value</label>
+      <input 
+        type="number" 
+        id="currentValue" 
+        name="currentValue" 
+        formControlName="currentValue"
+        class="form-control" 
+       
+       >
+  
+@if (f.currentValue.touched && f.currentValue.hasError('required')){
+    <small class="text-danger">currentValue is reuired </small>
+   }
+    </div>
+  hii{{!form.valid}}
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+  </form>
+
+  <h3 class="text-success">{{successMsg()}}</h3>
+  <h2  class="text-danger">{{serverError()}}</h2>
