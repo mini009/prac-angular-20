@@ -1,0 +1,16 @@
+
+<form #investmentForm="ngForm" (ngSubmit)="onSubmit(investmentForm)">
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input 
+        type="text" 
+        id="id" 
+        name="id" 
+        [(ngModel)]="investment.id" 
+        class="form-control" 
+        required 
+        #id="ngModel">
+   
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="investmentForm.invalid">Submit</button>
+    </form>

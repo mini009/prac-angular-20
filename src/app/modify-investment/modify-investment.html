@@ -1,0 +1,88 @@
+
+<form #investmentForm="ngForm" (ngSubmit)="onSubmit(investmentForm)">
+    <div class="form-group">
+      <label for="id">ID</label>
+      <input 
+        type="text" 
+        id="id" 
+        name="id" 
+        [(ngModel)]="investment.id" 
+        class="form-control" 
+        required 
+        #id="ngModel">
+   
+    </div>
+  
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        [(ngModel)]="investment.name" 
+        class="form-control" 
+        required 
+        #name="ngModel">
+ 
+    </div>
+  
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select 
+        id="type" 
+        name="type" 
+        [(ngModel)]="investment.type" 
+        class="form-control" 
+        required 
+        #type="ngModel">
+        <option value="Mutual Fund">Mutual Fund</option>
+        <option value="Stocks">Stocks</option>
+        <option value="Bonds">Bonds</option>
+      </select>
+  
+    </div>
+  
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input 
+        type="number" 
+        id="amount" 
+        name="amount" 
+        [(ngModel)]="investment.amount" 
+        class="form-control" 
+        required 
+        #amount="ngModel">
+
+    </div>
+  
+    <div class="form-group">
+      <label for="purchaseDate">Purchase Date</label>
+      <input 
+        type="date" 
+        id="purchaseDate" 
+        name="purchaseDate" 
+        [(ngModel)]="investment.purchaseDate" 
+        class="form-control" 
+        required 
+        #purchaseDate="ngModel">
+ 
+    </div>
+  
+    <div class="form-group">
+      <label for="currentValue">Current Value</label>
+      <input 
+        type="number" 
+        id="currentValue" 
+        name="currentValue" 
+        [(ngModel)]="investment.currentValue" 
+        class="form-control" 
+        required 
+        #currentValue="ngModel">
+  
+    </div>
+  
+    <button type="submit" class="btn btn-primary" [disabled]="investmentForm.invalid">Submit</button>
+  </form>
+  
+
+

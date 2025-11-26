@@ -1,0 +1,84 @@
+/* General Form Styling */
+form {
+    max-width: 500px; /* Limit the form's width */
+    margin: 30px auto; /* Center the form */
+    padding: 20px;
+    background-color: #fff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Form Group */
+  .form-group {
+    margin-bottom: 20px; /* Space between form fields */
+  }
+  
+  /* Label Styling */
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px; /* Space between label and input */
+  }
+  
+  /* Input Field Styling */
+  input.form-control {
+    width: 100%; /* Make input take full width */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in width */
+    transition: border-color 0.3s ease-in-out; /* Smooth transition on focus */
+  }
+  
+  /* Input Focus Effect */
+  input.form-control:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Submit Button Styling */
+  button[type="submit"] {
+    width: 100%; /* Make button full width */
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  /* Button Hover Effect */
+  button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Disabled Button */
+  button[type="submit"]:disabled {
+    background-color: #ccc; /* Light gray when disabled */
+    cursor: not-allowed; /* Disable cursor */
+  }
+  
+  /* Error Message Styling */
+  .text-danger {
+    font-size: 12px;
+    color: #dc3545;
+    margin-top: 5px;
+  }
+  
+  /* Responsive Design for Small Screens */
+  @media (max-width: 768px) {
+    form {
+      padding: 15px; /* Reduce padding for small screens */
+    }
+  
+    button[type="submit"] {
+      padding: 10px; /* Smaller button on small screens */
+    }
+  }
+  

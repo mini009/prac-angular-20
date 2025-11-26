@@ -1,9 +1,9 @@
 export interface Investment{
-    id:number;
+    id:number | null;
     name:string;
     type:'Equity'|'Debt'| 'Mutual Fund';
-    amount:number;
+    amount:number | null;
     purchaseDate:string;
-    currentValue:number;
+    currentValue:number |null;
 
 }

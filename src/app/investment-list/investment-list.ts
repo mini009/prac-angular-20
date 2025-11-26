@@ -17,12 +17,12 @@ export class InvestmentList {
 
   ngOnInit(){
     this.investmentService.loadInvestments();
-   // this.displayInvestments();
+   
   }
 
   displayInvestments(){
     this.allInvestementsList.set(this.investmentService.investments());
-    //console.log(this.allInvestementsList());
+  
   }
 
 }

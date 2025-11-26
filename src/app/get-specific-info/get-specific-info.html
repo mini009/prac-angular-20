@@ -1,0 +1,32 @@
+<div class="get-specific-info-container">
+
+<label for="investmentId">Investment Id:</label>
+<br/>
+<input id="investmentId" type="number" placeholder="Enter id" value="id() ?? ''"
+(input)="onIdInput($event)"/>
+
+<button (click)="showDataSet()" class="show-by-id" [disabled]="!id()">Show Investment by Id</button>
+
+</div>
+
+@if (loading()) {
+    <div class="info">Loading...</div>
+
+}
+@if (error()) {
+    <div class="error">Error: {{error()}}</div>
+
+}
+
+@if (investment() && showData) {
+    <div class="investment-details specific-investment-card">
+        <h3>{{investment()!.name}}</h3>
+     
+       <ul>
+        @for(field of fields();track field.label) {
+            <li ><strong>{{field.label}}:</strong> {{field.value}}</li>
+        }
+       </ul>
+
+    </div>
+} 
