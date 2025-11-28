@@ -1,0 +1,70 @@
+
+{{store.investments | json}}
+
+
+<div class="investment-page">
+    <h1 class="page=title">Investment Dashboard</h1>
+
+    <div class="summary">
+        <div class="summary-item">
+            <div class="label"><h2>Total Investments</h2></div>
+            <div class="value"><p>₹{{ store.totalInvested() | number }}</p></div>
+        </div>
+
+        <div class="summary-item">
+            <div class="label"><h2>Current Value</h2></div>
+            <div class="value"><p>₹{{ store.totalCurrent() | number }}</p></div>
+        </div>
+
+        <div class="summary-item">
+            <div class="label"><h2>Total Profit/Loss</h2></div>
+            <div class="value"   [class.positive]="store.totalGain() >= 0"
+                [class.negative]="store.totalGain() < 0">
+                ₹{{ store.totalGain() | number }}
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="content">
+        @if(store.isLoading()){
+            <div class="banner banner-loading">Loading investements...</div>
+        }
+        @else if(store.error()){
+            <div class="banner banner-error">Error: {{ store.error() }}</div>
+        }
+        @else{
+            <div class="list">
+                @for(inv of store.investments();track inv.id){
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="name"><h3>{{ inv.name }}</h3></div>
+                            <div class="badge">{{ inv.type }}</div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="lable">Invested</div>
+                                    <div class="value">{{ inv.amount | number }}</div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="lable">Current</div>
+                                    <div class="value">{{ inv.currentValue | number }}</div>
+                                </div>
+                                
+                            </div>
+                            <div class="meta">Purachsed:{{inv.purchaseDate | date:'mediumDate'}}</div>
+                            </div>
+                    </div>
+                }
+                @empty{
+                    <div class="empty">No investments found. Please add new investments.</div>
+                }
+                
+                </div>
+        }
+        </div>
+</div>

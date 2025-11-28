@@ -51,10 +51,9 @@
     }
 
 }
-/* for large desktops */
-/* @media screen and (min-width: 1440px) {
-    .investment-container {
-        grid-template-columns: repeat(6, 1fr);
-    }
+.display-investment {
+    display: block;           /* Makes the button a block element */
+    text-align: center;       /* Centers the button horizontally */
+    margin: 0 auto;           /* Optional: If you need it to be responsive */
+  }
 
-} */
